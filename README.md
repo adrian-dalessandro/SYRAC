@@ -12,16 +12,8 @@
 ![Synthetic Images Header](figures/synthetic_images.png)
 
 ## Overview
-Crowd counting is a fundamental task in computer vision with various practical applications. However, existing methods rely on labor-intensive density map annotations, involving manual pedestrian localization. Recent attempts at weakly or semi-supervised learning have not adequately reduced this annotation workload.
+We release our code for reproducing the experiments conducted within our paper.
 
-**Our Approach**: We propose a novel solution that leverages latent diffusion models to generate synthetic data, eliminating the need for manual annotation. However, latent diffusion models struggle to accurately estimate object quantities, leading to noisy annotations when producing images with specific object counts.
-
-**Our Solution**: To address this challenge, we use latent diffusion models to create two types of synthetic data:
-
-1. **Ranked Image Pairs**: We remove pedestrians from real images, generating ranked image pairs with a weak but reliable signal for object quantity.
-2. **Synthetic Images with Fixed Object Counts**: We generate synthetic images with predetermined object counts, offering a strong but noisy counting signal.
-
-Our approach employs the ranked image pairs for pre-training and fits a linear layer to the noisy synthetic images using crowd quantity features. Our method achieves state-of-the-art performance in unsupervised crowd counting, demonstrating its effectiveness in reducing annotation requirements for computer vision tasks.
 
 ### Data
 
