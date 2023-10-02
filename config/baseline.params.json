@@ -1,0 +1,13 @@
+{"input_shape": [640, 853, 3], 
+"batch_size": 3, 
+"epochs": 15, 
+"model_name": "resnet50", 
+"weights": "imagenet", 
+"initializations": "glorot_uniform", 
+"optimizer": "adam", 
+"loss": {"class_name": "BinaryCrossentropy",
+         "config": {"from_logits": false}}, 
+"augment": 2, 
+"learning_rate": 5e-05, 
+"num_neurons": 128, 
+"num_layers": 0}
