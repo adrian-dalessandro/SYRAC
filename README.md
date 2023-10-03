@@ -1,4 +1,4 @@
-# SYRAC: Synthesize, Rank, & Count
+# SYRAC: Synthesize, Rank & Count
 
 ![Publication](https://img.shields.io/badge/arXiv-5148232-red.svg)
 ![License](https://img.shields.io/badge/License-AI_Pubs_Open_RAIL_S-blue.svg)
