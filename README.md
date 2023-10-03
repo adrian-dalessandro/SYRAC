@@ -14,8 +14,7 @@
 ## Overview
 We release our code for reproducing the experiments conducted within our paper.
 
-
-### Data
+## Data
 
 We will be updating this repository with a link to the synthetic and real data shortly.
 
@@ -37,7 +36,8 @@ $ pip install -r requirements.txt
 ```
 
 ## Usage
-Running the model
+### Pre-training on Ranking Data
+Before fine-tuning on noisy synthetic crowd counting data, you need to pre-train the model on ranking data. Use the following command:
 
 ```bash
 # Training from scratch
@@ -48,7 +48,16 @@ $ python train_wrapper.py --experiment training/baseline \
                           --experiment_dir "path/to/experiments" \
                           --experiment_name "name_your_experiment"
 ```
-Fine-tuning the model
+- `--experiment`: the path to the training procedures (currently only training/baseline but you could write your own)
+- `--params_dir`: Path to the directory containing model configuration parameters.
+- `--dataset`: Name of the synthetic ranking dataset top-level directory (e.g. "DS_SYNTH_JHU")
+- `--data_dir`: Path to the directory where your ranking data directory is located.
+- `--experiment_dir`: Path to the directory where pre-training experiment results will be saved.
+- `--experiment_name`: Name your pre-training experiment for identification.
+
+
+### Fine-tuning on Noisy Synthetic Crowd Counting Data
+After pre-training, fine-tune the model on noisy synthetic crowd counting data using the following command:
 ```bash
 # Finetuning pre-trained model
 $ python3 finetune_wrapper.py --experiment finetuning/unsupervised/noisy_synth_regress \
@@ -61,6 +70,17 @@ $ python3 finetune_wrapper.py --experiment finetuning/unsupervised/noisy_synth_r
                          --params_dir "./config/"
 ```
 
+- `--experiment`: the path to the finetuning procedures (currently only finetuning/unsupervised/noisy_synth_regress, but you could write your own)
+- `--data_dir`: Path to the directory where your crowd counting dataset is located.
+- `--train_data`: Specify the top-level directory name for the training data source (e.g., "DS_NOISY_SYNTH").
+- `--test_data`: Specify the top-level directory name of your (real) crowd counting test dataset (e.g., "DS_JHU").
+- `--N`: how to patch the image, (i.e, N = 3 would split an image into a 3x3 grid)
+- `--experiment_path`: Path to the directory where pre-trained experiment results were saved.
+- `--model_path`: directory name for the pre-trained model from the ranking data pre-training step (i.e. "best_model")
+- `--params_dir`: Path to the directory containing model configuration parameters.
+
+This two-step process involves pre-training on ranking data to leverage ranking image pairs and then fine-tuning on noisy synthetic crowd counting data. Ensure that you replace the placeholders with your specific dataset and directory paths, and adjust other parameters and experiment configurations as needed for your project requirements.
+
 ## License
 
-While crowd counting has legitimate usecases, such as urban planning, event management, and retail analysis. However, it also involves human surveillance, which we should always be deeply skeptical of. Given ths, we release all source code under the Open RAIL-S LICENSE in an attempt to mitigate downstream misuse.
+Crowd counting has legitimate use cases such as urban planning, event management, and retail analysis. However, it also involves human surveillance, which can be misused by bad actors. We should always be deeply skeptical of any human surveillance use cases downstream of our research. Given ths, we release all of our source code under the Open RAIL-S LICENSE in an attempt to mitigate downstream misuse.
