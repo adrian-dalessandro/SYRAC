@@ -11,6 +11,9 @@
 
 ![Synthetic Images Header](figures/synthetic_images.png)
 
+  
+![Methology Header](figures/methodology.png)
+
 ## Overview
 We release our code for reproducing the experiments conducted within our paper.
 
