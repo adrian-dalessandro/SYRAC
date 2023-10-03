@@ -14,10 +14,6 @@
 ## Overview
 We release our code for reproducing the experiments conducted within our paper.
 
-## Data
-
-We will be updating this repository with a link to the synthetic and real data shortly.
-
 ## Requirements
 ```python
 tensorflow==2.8
@@ -80,6 +76,14 @@ $ python3 finetune_wrapper.py --experiment finetuning/unsupervised/noisy_synth_r
 - `--params_dir`: Path to the directory containing model configuration parameters.
 
 This two-step process involves pre-training on ranking data to leverage ranking image pairs and then fine-tuning on noisy synthetic crowd counting data. Ensure that you replace the placeholders with your specific dataset and directory paths, and adjust other parameters and experiment configurations as needed for your project requirements.
+
+## Data
+
+We will be updating this repository with a link to the synthetic and real data shortly.
+
+## Checkpoints
+
+We will be updating this repository with a link to the pre-trained checkpoints shortly.
 
 ## License
 
