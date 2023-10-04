@@ -1,6 +1,6 @@
 # SYRAC: Synthesize, Rank & Count
 
-![Publication](https://img.shields.io/badge/arXiv-5148232-red.svg)
+[![Publication](https://img.shields.io/badge/arXiv-2310.01662-red.svg)](https://arxiv.org/abs/2310.01662)
 ![License](https://img.shields.io/badge/License-AI_Pubs_Open_RAIL_S-blue.svg)
 ![Python](https://img.shields.io/badge/Python-3.8-blue.svg)
 [![TensorFlow](https://img.shields.io/badge/TensorFlow-2.8-orange.svg)](https://github.com/tensorflow/tensorflow/releases/tag/v2.8.0)
