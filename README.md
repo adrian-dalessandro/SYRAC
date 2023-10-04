@@ -88,6 +88,20 @@ We will be updating this repository with a link to the synthetic and real data s
 
 We will be updating this repository with a link to the pre-trained checkpoints shortly.
 
+## Attribution
+
+If you use any part of this work in your projects or publications, please cite:
+
+```
+@misc{dalessandro2023syrac,
+      title={SYRAC: Synthesize, Rank, and Count}, 
+      author={Adriano D'Alessandro and Ali Mahdavi-Amiri and Ghassan Hamarneh},
+      year={2023},
+      eprint={2310.01662},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV}
+}
+```
 ## License
 
 Crowd counting has legitimate use cases such as urban planning, event management, and retail analysis. However, it also involves human surveillance, which can be misused by bad actors. We should always be deeply skeptical of any human surveillance use cases downstream of our research. Given ths, we release all of our source code under the Open RAIL-S LICENSE in an attempt to mitigate downstream misuse.
